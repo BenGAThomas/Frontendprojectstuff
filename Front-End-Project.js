@@ -1,5 +1,5 @@
-const testApi = document.getElementById("test");
-const testApiTwo = document.getElementById("testTwo");
+// const testApi = document.getElementById("test");
+// const testApiTwo = document.getElementById("testTwo");
 const urlThree =
   "https://api-football-v1.p.rapidapi.com/v3/teams?league=253&season=2023";
 const url2 =
@@ -8,13 +8,14 @@ const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "be0b59e48cmshd8fe8e2ef50cfb9p18443cjsna321356afcc9",
+    "X-RapidAPI-Key": "6decee34d5msh22f17ec7e198e9dp1d23a5jsn4f4bc0ff41f6",
     "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
   },
 };
-let myApiTest = document.getElementById("myUl");
+// let myApiTest = document.getElementById("myUl");
 let myApiTestTwo = document.getElementById("teamsList");
 let testingImageDiv = document.getElementById("imageDiv");
+// let teamInformationArray = [];
 
 function getTest() {
   fetch(urlThree, options)
@@ -30,6 +31,8 @@ function getTest() {
           name: tObj.team.name,
           city: tObj.venue.city,
           logo: tObj.team.logo,
+          venueName: tObj.venue.name,
+          venueCapacity: tObj.venue.capacity,
         };
       });
       console.log(teamInformationArray);
@@ -41,38 +44,62 @@ function getTest() {
         let option = document.createElement("li");
         let teamLogo = document.createElement("img");
         teamLogo.setAttribute("src", cur.logo);
+        teamLogo.setAttribute("id", cur.name);
         option.innerHTML = cur.name;
-        myApiTest.appendChild(option);
+        // myApiTest.appendChild(option);
         testingImageDiv.appendChild(teamLogo);
-
         // add an onclick event to each
         // showRestOfTeam(teamInformationArray[i]);
       }
+      return teamInformationArray;
+    }).then((teamInformationArray) => {
+      let teamImages = document.querySelectorAll('img');
+      console.log(teamImages);
+      teamImages.forEach((image) => {
+        image.addEventListener('click', () => {
+          const teamToShow = teamInformationArray.find(team => team.name === image.id)
+          showRestOfTeam(teamToShow)
+        })
+      })
     });
+
+    
 }
 
-function showREstOfTeam(teamInformation) {
-  // create a div or whatever html elmeent
-  // pass the information from teamInformation into
-  // lets say i wanted city i'd get the city by saying teamInformation.city
+function showRestOfTeam(teamInformation) {
+  document.getElementById("teamName").innerHTML = teamInformation.name;
+  document.getElementById("teamInfo").innerHTML = teamInformation.city;
+  document.getElementById("teamFounded").innerHTML = teamInformation.founded;
+  document.getElementById("teamVenueName").innerHTML = teamInformation.venueName;
+  document.getElementById("teamVenueCapacity").innerHTML = teamInformation.venueCapacity;
+  
+  // console.log(teamInformation);
+//passes all the info into the HTML document.
 }
 
-function getTestTwo() {
-  fetch(urlThree, options)
-    .then((resp) => {
-      console.log(resp);
-      return resp.json();
-    })
-    .then((data) => {
-      console.log(data);
-      for (let i = 0; i < data.response.length; i++) {
-        let cur = data.response[i];
-        let option = document.createElement("option");
-        option.innerHTML = cur.team.name;
-        myApiTestTwo.appendChild(option);
-      }
-    });
-}
+
+
+// function getTestTwo() {
+//   fetch(urlThree, options)
+//     .then((resp) => {
+//       console.log(resp);
+//       return resp.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//       for (let i = 0; i < data.response.length; i++) {
+//         let cur = data.response[i];
+//         let option = document.createElement("option");
+//         option.innerHTML = cur.team.name;
+//         myApiTestTwo.appendChild(option);
+//       }
+//     });
+// }
+
+getTest();
+
+
+
 
 // .then((data) => {
 //   console.log(data);
@@ -119,7 +146,7 @@ function getTestTwo() {
 //     });
 // }
 
-getTest();
+
 // fetchMyShit();
 // let myApiTest = document.getElementById("myUl");
 
@@ -245,42 +272,42 @@ getTest();
 //     </ul>
 
 //     <table>
-//         <tr>whatverver</tr>
+//         <tr>whatever</tr>
 //     </table>
 // </div>
 
-let data = {
-  name: "cesar",
-  age: 36,
-  isShort: false,
-  activities: {
-    favorite: ["eat", "sleet"],
-    disliked: {
-      movies: [
-        { title: "batman", date: "1988" },
-        { title: "superman", date: "1999" },
-      ],
-    },
-  },
-  kids: ["leo", "ripley"],
-};
+// let data = {
+//   name: "cesar",
+//   age: 36,
+//   isShort: false,
+//   activities: {
+//     favorite: ["eat", "sleet"],
+//     disliked: {
+//       movies: [
+//         { title: "batman", date: "1988" },
+//         { title: "superman", date: "1999" },
+//       ],
+//     },
+//   },
+//   kids: ["leo", "ripley"],
+// };
 
-// What is my name?
-data.name;
-// What are the kids?
-// for (start; end; each index)
-for (let i = 0; i < data.kids.length; i++) {
-  let cur = data.kids[i]; //ripley
-  console.log(cur); // ripley
-}
-// What are the favorite activities?
-for (let i = 0; i < data.activities.favorite.length; i++) {
-  let cur = data.activities.favorite[i];
-  console.log(cur);
-}
-// What are the movies?
-let movies = data.activities.disliked.movies;
-for (let i = 0; i < movies.length; i++) {
-  let cur = movies[i];
-  console.log("my movies", cur);
-}
+// // What is my name?
+// data.name;
+// // What are the kids?
+// // for (start; end; each index)
+// for (let i = 0; i < data.kids.length; i++) {
+//   let cur = data.kids[i]; //ripley
+//   console.log(cur); // ripley
+// }
+// // What are the favorite activities?
+// for (let i = 0; i < data.activities.favorite.length; i++) {
+//   let cur = data.activities.favorite[i];
+//   console.log(cur);
+// }
+// // What are the movies?
+// let movies = data.activities.disliked.movies;
+// for (let i = 0; i < movies.length; i++) {
+//   let cur = movies[i];
+//   console.log("my movies", cur);
+// }
