@@ -44,7 +44,7 @@ function getTest() {
         teamLogo.setAttribute("src", cur.logo);
         teamLogo.setAttribute("id", cur.name);
         // option.innerHTML = cur.name;
-
+        teamLogo.setAttribute("class", "teamImage")
         testingImageDiv.appendChild(teamLogo);
       }
       return teamInformationArray;
@@ -73,3 +73,5 @@ function showRestOfTeam(teamInformation) {
 
 
 getTest();
+
+

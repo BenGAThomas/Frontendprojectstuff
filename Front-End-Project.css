@@ -1,0 +1,30 @@
+#teamName {
+    font-family: cursive;
+    font-size: 40px;
+    font-weight: bold;
+    border: 10px solid black;
+}
+
+#teamInfo {
+    font-family: monospace;
+    font-size: 30px;
+    font-weight:lighter;
+}
+
+
+.teamImage {
+    height: 150px;
+    width: 150px;
+    /* border-style: solid;
+    border-style: 10px; */
+    border: 10px solid rgb(247, 10, 10);
+
+       
+}
+/* 
+#imageDiv img {
+    height: 150px;
+    width: 150px;
+    border: 10px solid black;
+    padding: 30px;
+} */
