@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #teamName {
     font-family: cursive;
     font-size: 40px;
@@ -12,6 +11,14 @@
     font-weight:lighter;
 }
 
+#logoAndBall img {
+    height: 200px;
+    width: 200px;
+    /* display: flex;
+    flex-direction: column; */
+    /* margin-left: auto;
+    margin-right: auto; */
+}
 
 .teamImage {
     height: 150px;
@@ -29,11 +36,5 @@
     border: 10px solid black;
     padding: 30px;
 } */
-=======
-#imageDiv {
- height: 50%;
- width: 50%;
- border-style: solid;
- border-width: 5px;   
-}
->>>>>>> 7ef43b6061faf0fface5af22d2960b4d148a99f6
+
+
