@@ -12,11 +12,43 @@
   </head>
   <body>
 
+
+<!-- 
 <div id="logoAndBall">
-  <img src="./mlssoccerball.webp">
-  <img src="./MLS Logo.webp">
-  <img src="./mlssoccerball.webp">
+  <img id="leftSoccerBall" src="./mlssoccerball.webp">
+  <img id="shield" src="./MLS Logo.webp">
+  <img id="rightSoccerBall" src="./mlssoccerball.webp">
+</div> -->
+
+<!-- 
+<div class="container">
+  <div class="column">
+    <div class="col text-center">
+      <img src="./mlssoccerball.webp" alt="Image 1">
+    </div>
+    <div class="col text-center">
+      <img src="./MLS Logo.webp" alt="Image 2">
+    </div>
+    <div class="col text-center">
+      <img src="./mlssoccerball.webp" alt="Image 3">
+    </div>
+  </div>
+</div> -->
+
+<!-- <img src="./mlssoccerball.webp" class="rounded float-left" alt="...">
+<img id="logo" src="./MLS Logo.webp" class="rounded mx-auto d-block" alt="..." style="height:200px">
+<img src="./mlssoccerball.webp" class="rounded float-right" alt="..."> -->
+
+
+<div class="d-flex justify-content-between">
+  <img id="leftBall" src="./mlssoccerball.webp" style="height: 200px; width: 200px;">
+  <img id="logo" src="./MLS Logo.webp" style="height: 200px; width: 200px;">
+  <img id="rightBall" src="./mlssoccerball.webp" style="height: 200px; width: 200px;">
+
 </div>
+  
+
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1>Team Name</h1>
@@ -36,7 +68,7 @@
   </div>
 </div>
 
-    <div id="imageDiv"></div>
+    <div id="imageDiv" style="display: flex; justify-content: center; flex-wrap: wrap;"></div>
     
 
    

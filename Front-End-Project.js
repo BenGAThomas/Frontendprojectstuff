@@ -75,3 +75,7 @@ function showRestOfTeam(teamInformation) {
 getTest();
 
 
+$('teamImage').click(function() {
+  $('.selected').removeClass('selected');
+  $(this).addClass('selected');
+});
