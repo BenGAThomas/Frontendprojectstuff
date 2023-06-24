@@ -1,8 +1,8 @@
-const urlThree =
+const leagueAPI =
   "https://api-football-v1.p.rapidapi.com/v3/teams?league=253&season=2023";
-const url2 =
-  "https://api-football-v1.p.rapidapi.com/v3/standings?league=253&season=2023&team=1608";
-const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
+// const url2 =
+//   "https://api-football-v1.p.rapidapi.com/v3/standings?league=253&season=2023&team=1608";
+// const url = "https://api-football-v1.p.rapidapi.com/v3/leagues";
 const options = {
   method: "GET",
   headers: {
@@ -11,12 +11,12 @@ const options = {
   },
 };
 
-let myApiTestTwo = document.getElementById("teamsList");
-let testingImageDiv = document.getElementById("imageDiv");
+// let myApiTestTwo = document.getElementById("teamsList");
+let teamImageDiv = document.getElementById("imageDiv");
 
 
 function getTest() {
-  fetch(urlThree, options)
+  fetch(leagueAPI, options)
     .then((resp) => {
       console.log(resp);
       return resp.json();
@@ -39,13 +39,11 @@ function getTest() {
 
       for (let i = 0; i < teamInformationArray.length; i++) {
         let cur = teamInformationArray[i];
-        // let option = document.createElement("li");
         let teamLogo = document.createElement("img");
         teamLogo.setAttribute("src", cur.logo);
         teamLogo.setAttribute("id", cur.name);
-        // option.innerHTML = cur.name;
         teamLogo.setAttribute("class", "teamImage")
-        testingImageDiv.appendChild(teamLogo);
+        teamImageDiv.appendChild(teamLogo);
       }
       return teamInformationArray;
     }).then((teamInformationArray) => {
@@ -58,8 +56,6 @@ function getTest() {
         })
       })
     });
-
-    
 }
 
 function showRestOfTeam(teamInformation) {
@@ -74,8 +70,3 @@ function showRestOfTeam(teamInformation) {
 
 getTest();
 
-
-$('teamImage').click(function() {
-  $('.selected').removeClass('selected');
-  $(this).addClass('selected');
-});

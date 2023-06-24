@@ -2,7 +2,6 @@
     font-family: cursive;
     font-size: 40px;
     font-weight: bold;
-    border: 10px solid black;
 }
 
 #teamInfo {
@@ -35,8 +34,6 @@
 .teamImage {
     height: 150px;
     width: 150px;
-    /* border-style: solid;
-    border-style: 10px; */
     padding: 20px;
     margin-top: 20px;
 }
@@ -44,3 +41,15 @@
  .teamImage:hover {
     border: 10px solid rgb(0, 0, 0);
  }
+
+#teamFounded {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#teamVenueName {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#teamVenueCapacity {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
